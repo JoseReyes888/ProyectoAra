@@ -8,33 +8,7 @@
     <link href="{{ asset('css/inicio_admin.css') }}" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar Desktop -->
-    <nav class="navbar-desktop">
-        <div class="navbar-desktop-container">
-            <div class="logo">
-                <i class="fas fa-home"></i>
-                <span>Nelva Bienes Raíces</span>
-            </div>
-         <div class="nav-links">
-                <a href="Inicio"><i class="fas fa-home"></i> Inicio</a>
-                <a href="apartados"  class="active"><i class="fas fa-calendar-check"></i> Apartados</a>
-                <a href="ventas"><i class="fas fa-history"></i> Ventas</a>
-                <a href="perfil"><i class="fas fa-user"></i> Perfil</a>
-                <a href="#" id="logout-btn-desktop"><i class="fas fa-sign-out-alt"></i> Salir</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Navbar con opciones requeridas -->
-    <nav class="navbar-options">
-        <div class="navbar-options-container">
-            <ul class="options-links">
-                <li><a href="#"><i class="fas fa-users"></i> Asesores</a></li>
-                <li><a href="#"><i class="fas fa-file-contract"></i> Solicitud de Apartado</a></li>
-                <li><a href="#"><i class="fas fa-handshake"></i> Solicitud de Ventas</a></li>
-            </ul>
-        </div>
-    </nav>
 
     <!-- Main Content -->
     <div class="container"> 
@@ -278,29 +252,6 @@
         <i class="fas fa-plus"></i>
     </div>
 
-    <!-- Navbar Mobile -->
-    <nav class="navbar-mobile">
-        <a href="#" class="nav-item active">
-            <i class="fas fa-home"></i>
-            <span>Inicio</span>
-        </a>
-        <a href="apartados.html" class="nav-item">
-            <i class="fas fa-calendar-check"></i>
-            <span>Apartados</span>
-        </a>
-        <a href="ventas.html" class="nav-item">
-            <i class="fas fa-history"></i>
-            <span>Ventas</span>
-        </a>
-        <a href="perfil.html" class="nav-item">
-            <i class="fas fa-user"></i>
-            <span>Perfil</span>
-        </a>
-        <a href="#" class="nav-item" id="logout-btn-mobile">
-            <i class="fas fa-sign-out-alt"></i>
-            <span>Salir</span>
-        </a>
-    </nav>
 
     <!-- Modal para cerrar sesión -->
     <div id="logout-modal" style="display:none;">

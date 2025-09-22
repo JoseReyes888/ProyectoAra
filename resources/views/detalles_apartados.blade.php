@@ -8,6 +8,7 @@
    <link href="{{ asset('css/detalles_apartados.css') }}" rel="stylesheet">
 </head>
 <body>
+
     
     <!-- CRONOMETRO PEQUEÑO Y FIJADO -->
     <div class="fixed-time-counter fixed-time-normal" id="fixedTimeCounter">
@@ -15,23 +16,6 @@
         <span id="fixedTimeRemaining">19h 45m</span>
     </div>
 
-
-    <!-- Navbar Desktop -->
-    <nav class="navbar-desktop">
-        <div class="navbar-desktop-container">
-            <div class="logo">
-                <i class="fas fa-home"></i>
-                <span>Nelva Bienes Raíces</span>
-            </div>
-         <div class="nav-links">
-                <a href="Inicio"><i class="fas fa-home"></i> Inicio</a>
-                <a href="apartados"  class="active"><i class="fas fa-calendar-check"></i> Apartados</a>
-                <a href="ventas"><i class="fas fa-history"></i> Ventas</a>
-                <a href="perfil"><i class="fas fa-user"></i> Perfil</a>
-                <a href="#" id="logout-btn-desktop"><i class="fas fa-sign-out-alt"></i> Salir</a>
-            </div>
-        </div>
-    </nav>
 
     <!-- Main Content -->
     <div class="container">
@@ -42,6 +26,13 @@
             </h1>
             <p class="page-subtitle">Revisa el estado y detalles de tu reservación</p>
         </div>
+
+         <!-- Contador de tiempo -->
+            <div class="time-counter" id="timeCounter">
+                <i class="fas fa-clock"></i>
+                <span>Tiempo restante: <strong id="timeRemaining">19 horas 45 minutos</strong></span>
+             </div>
+
 
         <!-- Tarjeta de apartado -->
         <div class="reservation-card">
@@ -104,11 +95,6 @@
                 </div>
             </div>
 
-            <!-- Contador de tiempo -->
-            <div class="time-counter" id="timeCounter">
-                <i class="fas fa-clock"></i>
-                <span>Tiempo restante: <strong id="timeRemaining">19 horas 45 minutos</strong></span>
-            </div>
 
             <!-- Sección de depósito -->
             <div class="deposit-section" id="depositSection">
@@ -210,35 +196,12 @@
             </div>
         </div>
 
-        <a href="apartados.html" class="btn-back">
+        <a href="apartados" class="btn-back">
             <i class="fas fa-arrow-left"></i>
             <span>Volver a mis apartados</span>
         </a>
     </div>
 
-    <!-- Navbar Mobile -->
-    <nav class="navbar-mobile">
-        <a href="inicio.html" class="nav-item">
-            <i class="fas fa-home"></i>
-            <span>Inicio</span>
-        </a>
-        <a href="apartados.html" class="nav-item active">
-            <i class="fas fa-calendar-check"></i>
-            <span>Apartados</span>
-        </a>
-        <a href="ventas.html" class="nav-item">
-            <i class="fas fa-history"></i>
-            <span>Ventas</span>
-        </a>
-        <a href="perfil.html" class="nav-item">
-            <i class="fas fa-user"></i>
-            <span>Perfil</span>
-        </a>
-        <a href="#" class="nav-item" id="logout-btn-mobile">
-            <i class="fas fa-sign-out-alt"></i>
-            <span>Salir</span>
-        </a>
-    </nav>
 
     <!-- Modal para logout -->
     <div id="logout-modal" style="display:none;">
@@ -472,7 +435,7 @@
 
         confirmBtn.addEventListener('click', function() {
             // Redirige o realiza el cierre de sesión
-            window.location.href = 'index.html';
+            window.location.href = 'index';
         });
 
         // Cierra el modal si se hace click fuera del contenido

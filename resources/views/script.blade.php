@@ -7,8 +7,8 @@
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="{{ asset('css/script.css') }}" rel="stylesheet">
-</head>
+  <link href="{{ asset('css/script.css') }}" rel="stylesheet">
+  </head>
 <body>
 <img id="logo" src="OCEANICA.png" alt="Logo del Fraccionamiento">
 <div id="map"></div>

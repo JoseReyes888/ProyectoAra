@@ -8,22 +8,7 @@
     <link href="{{ asset('css/fraccionamiento.css') }}" rel="stylesheet">
 </head>
 <body>
-     <!-- Navbar Desktop -->
-    <nav class="navbar-desktop">
-        <div class="navbar-desktop-container">
-            <div class="logo">
-                <i class="fas fa-home"></i>
-                <span>Nelva Bienes Raíces</span>
-            </div>
-         <div class="nav-links">
-                <a href="Inicio"><i class="fas fa-home"></i> Inicio</a>
-                <a href="apartados"  class="active"><i class="fas fa-calendar-check"></i> Apartados</a>
-                <a href="ventas"><i class="fas fa-history"></i> Ventas</a>
-                <a href="perfil"><i class="fas fa-user"></i> Perfil</a>
-                <a href="#" id="logout-btn-desktop"><i class="fas fa-sign-out-alt"></i> Salir</a>
-            </div>
-        </div>
-    </nav>
+
 
     <!-- Main Content -->
     <div class="container">
@@ -33,7 +18,7 @@
                 <span>Detalles del Fraccionamiento</span>
             </h1>
             <div class="page-actions">
-                <button class="btn btn-outline">
+                <button class="btn btn-outline" onclick="window.location.href='ventas'">
                     <i class="fas fa-arrow-left"></i> Volver
                 </button>
             </div>
@@ -381,32 +366,7 @@
             </form>
         </div>
     </div>
-
-
-    <!-- Navbar Mobile -->
-    <nav class="navbar-mobile">
-        <a href="inicio.html" class="nav-item active">
-            <i class="fas fa-home"></i>
-            <span>Inicio</span>
-        </a>
-        <a href="apartados.html" class="nav-item">
-            <i class="fas fa-calendar-check"></i>
-            <span>Apartados</span>
-        </a>
-        <a href="ventas.html" class="nav-item">
-            <i class="fas fa-history"></i>
-            <span>Ventas</span>
-        </a>
-        <a href="perfil.html" class="nav-item">
-            <i class="fas fa-user"></i>
-            <span>Perfil</span>
-        </a>
-        <a href="#" class="nav-item" id="logout-btn-mobile">
-            <i class="fas fa-sign-out-alt"></i>
-            <span>Salir</span>
-        </a>
-    </nav>
-
+</body>
 
     <script>
         // Visor de imágenes
@@ -526,6 +486,8 @@
             planContainer.scrollTop += scrollY;
         });
 
+
+        
 
 
 
@@ -828,6 +790,7 @@
             lotDetails.style.display = 'block';
         });
 
+
+
     </script>
-</body>
 </html>

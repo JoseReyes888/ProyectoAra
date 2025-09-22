@@ -76,7 +76,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     
     // Aquí iría la lógica de autenticación
     console.log('Intento de login:', { username, password, remember });
-    window.location.href = 'inicio.html'; // Redirigir a la página de inicio
+    window.location.href = 'Inicio'; // Redirigir a la página de inicio
     // Simulación de login exitoso
     // alert('Acceso concedido. Redirigiendo...');
     // window.location.href = 'dashboard.html';
