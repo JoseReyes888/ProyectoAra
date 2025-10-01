@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fraccionamientos | Inmobiliaria</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="{{ asset('css/inicio_admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/administrador/inicio_admin.css') }}" rel="stylesheet">
 </head>
 <body>
 
