@@ -102,6 +102,32 @@
                 <button class="btn btn-outline">
                     <i class="fas fa-download"></i> Descargar Plano
                 </button>
+                <button class="btn btn-primary" id="btnSubirPlano">
+                    <i class="fas fa-upload"></i> Subir/Actualizar Plano
+                </button>
+            </div>
+            <!-- Agregar este modal después de los otros modales -->
+            <div class="modal" id="modalSubirPlano">
+                <div class="modal-content">
+                    <button class="close-modal" id="closeSubirPlanoModal">&times;</button>
+                    <h2 class="modal-title">Subir/Actualizar Plano</h2>
+                    
+                    <form id="subirPlanoForm">
+                        <div class="form-group">
+                            <label for="planoFile" class="form-label">Seleccionar archivo</label>
+                            <div class="plano-preview-container">
+                                <img id="planoPreview" src="" alt="Vista previa del plano" class="plano-preview">
+                                <input type="file" id="planoFile" class="form-control" accept="image/*,.svg" required>
+                            </div>
+                            <small class="form-text text-muted">Formatos permitidos: SVG, PNG, JPG. Tamaño máximo: 5MB</small>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" id="btnCancelarPlano">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
@@ -901,7 +927,77 @@
             modalModificar.style.display = 'none';
             document.body.style.overflow = 'auto';
         });
+        // Funcionalidad para subir/actualizar plano
+        const modalSubirPlano = document.getElementById('modalSubirPlano');
+        const btnSubirPlano = document.getElementById('btnSubirPlano');
+        const closeSubirPlanoModal = document.getElementById('closeSubirPlanoModal');
+        const btnCancelarPlano = document.getElementById('btnCancelarPlano');
+        const subirPlanoForm = document.getElementById('subirPlanoForm');
+        const planoPreview = document.getElementById('planoPreview');
 
+        // Abrir modal de subir plano
+        btnSubirPlano.addEventListener('click', function() {
+            modalSubirPlano.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
 
+        // Cerrar modal
+        const cerrarModalPlano = () => {
+            modalSubirPlano.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            subirPlanoForm.reset();
+            planoPreview.src = '';
+            planoPreview.classList.remove('has-image');
+        };
+
+        closeSubirPlanoModal.addEventListener('click', cerrarModalPlano);
+        btnCancelarPlano.addEventListener('click', cerrarModalPlano);
+
+        // Cerrar al hacer clic fuera del modal
+        modalSubirPlano.addEventListener('click', function(e) {
+            if (e.target === modalSubirPlano) {
+                cerrarModalPlano();
+            }
+        });
+
+        // Preview del plano
+        document.getElementById('planoFile').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    planoPreview.src = e.target.result;
+                    planoPreview.classList.add('has-image');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Manejar envío del formulario
+        subirPlanoForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const file = document.getElementById('planoFile').files[0];
+            if (!file) {
+                alert('Por favor seleccione un archivo');
+                return;
+            }
+
+            // Validar tamaño del archivo (5MB máximo)
+            if (file.size > 5 * 1024 * 1024) {
+                alert('El archivo es demasiado grande. El tamaño máximo permitido es 5MB');
+                return;
+            }
+
+            // Aquí iría la lógica para subir el archivo al servidor
+            
+            // Actualizar la imagen del plano en la página
+            document.getElementById('planImage').src = planoPreview.src;
+            
+            alert('Plano actualizado correctamente');
+            cerrarModalPlano();
+        });
+
+        
     </script>
 </html>

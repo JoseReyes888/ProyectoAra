@@ -118,9 +118,9 @@
                             <i class="fas fa-eye"></i>
                             <span>Ver Detalles</span>
                         </button>
-                        <button class="btn btn-success habilitar-fraccionamiento">
+                        <button class="btn btn-success deshabilitar-fraccionamiento">
                             <i class="fas fa-check"></i>
-                            <span>Habilitar</span>
+                            <span>Deshabilitar</span>
                         </button>
                         <button class="btn btn-danger eliminar-fraccionamiento">
                             <i class="fas fa-trash"></i>
@@ -168,9 +168,9 @@
                             <i class="fas fa-eye"></i>
                             <span>Ver Detalles</span>
                         </button>
-                        <button class="btn btn-success habilitar-fraccionamiento">
+                        <button class="btn btn-success deshabilitar-fraccionamiento">
                             <i class="fas fa-check"></i>
-                            <span>Habilitar</span>
+                            <span>Deshabilitar</span>
                         </button>
                         <button class="btn btn-danger eliminar-fraccionamiento">
                             <i class="fas fa-trash"></i>
@@ -220,9 +220,9 @@
                             <i class="fas fa-eye"></i>
                             <span>Ver Detalles</span>
                         </button>
-                        <button class="btn btn-success habilitar-fraccionamiento">
+                        <button class="btn btn-success deshabilitar-fraccionamiento">
                             <i class="fas fa-check"></i>
-                            <span>Habilitar</span>
+                            <span>Deshabilitar</span>
                         </button>
                         <button class="btn btn-danger eliminar-fraccionamiento">
                             <i class="fas fa-trash"></i>
@@ -270,9 +270,9 @@
                             <i class="fas fa-eye"></i>
                             <span>Ver Detalles</span>
                         </button>
-                        <button class="btn btn-success habilitar-fraccionamiento">
+                        <button class="btn btn-success deshabilitar-fraccionamiento">
                             <i class="fas fa-check"></i>
-                            <span>Habilitar</span>
+                            <span>Deshabilitar</span>
                         </button>
                         <button class="btn btn-danger eliminar-fraccionamiento">
                             <i class="fas fa-trash"></i>
@@ -497,12 +497,12 @@
             }
         });
 
-        // Funcionalidad para los botones "Habilitar Fraccionamiento"
-document.querySelectorAll('.habilitar-fraccionamiento').forEach(btn => {
+        // Funcionalidad para los botones "Deshabilitar Fraccionamiento"
+document.querySelectorAll('.deshabilitar-fraccionamiento').forEach(btn => {
     btn.addEventListener('click', function() {
-        if(confirm('¿Estás seguro de que deseas habilitar este fraccionamiento?')) {
-            // Aquí irá la lógica para habilitar el fraccionamiento
-            alert('Fraccionamiento habilitado correctamente');
+        if(confirm('¿Estás seguro de que deseas deshabilitar este fraccionamiento?')) {
+            // Aquí irá la lógica para deshabilitar el fraccionamiento
+            alert('Fraccionamiento deshabilitado correctamente');
         }
     });
 });
