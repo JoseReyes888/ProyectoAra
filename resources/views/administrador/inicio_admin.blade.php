@@ -67,10 +67,16 @@
         </div>
 
         <!-- Fraccionamientos List -->
-        <h2 class="section-title">
-            <i class="fas fa-list-ul"></i>
-            <span>Lista de Fraccionamientos</span>
-        </h2>
+        <div class="section-header">
+            <h2 class="section-title">
+                <i class="fas fa-list-ul"></i>
+                <span>Lista de Fraccionamientos</span>
+            </h2>
+            <button class="btn btn-primary" id="btnNuevoFraccionamiento">
+                <i class="fas fa-plus"></i>
+                <span>Agregar Fraccionamiento</span>
+            </button>
+        </div>
         
         <div class="fraccionamientos-list">
             <!-- Fraccionamiento 2 -->
@@ -111,6 +117,14 @@
                         <button class="btn btn-primary ver-detalles">
                             <i class="fas fa-eye"></i>
                             <span>Ver Detalles</span>
+                        </button>
+                        <button class="btn btn-success habilitar-fraccionamiento">
+                            <i class="fas fa-check"></i>
+                            <span>Habilitar</span>
+                        </button>
+                        <button class="btn btn-danger eliminar-fraccionamiento">
+                            <i class="fas fa-trash"></i>
+                            <span>Eliminar</span>
                         </button>
                     </div>
                 </div>
@@ -153,6 +167,14 @@
                         <button class="btn btn-primary ver-detalles">
                             <i class="fas fa-eye"></i>
                             <span>Ver Detalles</span>
+                        </button>
+                        <button class="btn btn-success habilitar-fraccionamiento">
+                            <i class="fas fa-check"></i>
+                            <span>Habilitar</span>
+                        </button>
+                        <button class="btn btn-danger eliminar-fraccionamiento">
+                            <i class="fas fa-trash"></i>
+                            <span>Eliminar</span>
                         </button>
                     </div>
                 </div>
@@ -198,6 +220,14 @@
                             <i class="fas fa-eye"></i>
                             <span>Ver Detalles</span>
                         </button>
+                        <button class="btn btn-success habilitar-fraccionamiento">
+                            <i class="fas fa-check"></i>
+                            <span>Habilitar</span>
+                        </button>
+                        <button class="btn btn-danger eliminar-fraccionamiento">
+                            <i class="fas fa-trash"></i>
+                            <span>Eliminar</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -236,9 +266,17 @@
                         </div>
                     </div>
                     <div class="fraccionamiento-actions">
-                        <button class="btn btn-primary">
+                        <button class="btn btn-primary ver-detalles">
                             <i class="fas fa-eye"></i>
                             <span>Ver Detalles</span>
+                        </button>
+                        <button class="btn btn-success habilitar-fraccionamiento">
+                            <i class="fas fa-check"></i>
+                            <span>Habilitar</span>
+                        </button>
+                        <button class="btn btn-danger eliminar-fraccionamiento">
+                            <i class="fas fa-trash"></i>
+                            <span>Eliminar</span>
                         </button>
                     </div>
                 </div>
@@ -279,37 +317,59 @@
                         <label for="nombreFraccionamiento">Nombre del fraccionamiento *</label>
                         <input type="text" id="nombreFraccionamiento" class="form-control" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="ubicacionFraccionamiento">Ubicación *</label>
+                        <input type="text" id="ubicacionFraccionamiento" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion">Descripción *</label>
+                        <textarea id="descripcion" class="form-control" required></textarea>
+                    </div>
                     
                     <div class="form-group">
-                        <label for="svgFile">Plano (formato SVG)</label>
+                        <label for="logoFile">Logo (formato PNG)</label>
+                        <input type="file" id="logoFile" class="form-control" accept=".png">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="svgFile">Plano Detallado (formato pdf)</label>
                         <input type="file" id="svgFile" class="form-control" accept=".svg">
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="numeroInicial">Número inicial de terrenos *</label>
+                            <label for="numeroInicial">Número inicial de Lotes *</label>
                             <input type="number" id="numeroInicial" class="form-control" required min="1">
                         </div>
                         <div class="form-group">
-                            <label for="numeroFinal">Número final de terrenos *</label>
+                            <label for="numeroFinal">Número final de Lotes *</label>
                             <input type="number" id="numeroFinal" class="form-control" required min="1">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="totalLotes">Número total de lotes *</label>
+                        <label for="totalLotes">Número total de Lotes *</label>
                         <input type="number" id="totalLotes" class="form-control" required min="1">
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="fichaTecnica">Ficha técnica detallada *</label>
-                        <textarea id="fichaTecnica" class="form-control" required></textarea>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="numeroInicialManzanas">Número inicial Manzanas *</label>
+                            <input type="number" id="numeroInicialManzanas" class="form-control" required min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="numeroFinalManzanas">Número final Manzanas *</label>
+                            <input type="number" id="numeroFinalManzanas" class="form-control" required min="1">
+                        </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="datosPropietario">Datos del propietario *</label>
-                        <textarea id="datosPropietario" class="form-control" required placeholder="Nombre completo, dirección, teléfono, RFC, etc."></textarea>
+                        <label for="totalManzanas">Número total de Manzanas *</label>
+                        <input type="number" id="totalManzanas" class="form-control" required min="1">
                     </div>
+
                     
                     <div class="form-group">
                         <label>Servicios disponibles *</label>
@@ -342,7 +402,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="precioGeneral">Precio general de los terrenos (MXN) *</label>
+                        <label for="precioGeneral">Precio general de lote por m2 (MXN) *</label>
                         <input type="number" id="precioGeneral" class="form-control" required min="0" step="0.01">
                     </div>
                 </form>
@@ -373,7 +433,7 @@
         });
 
         confirmBtn.addEventListener('click', function() {
-            window.location.href = 'index.html';
+            window.location.href = 'index';
         });
 
         modalLogout.querySelector('.modal-overlay').addEventListener('click', function() {
@@ -383,7 +443,7 @@
         // Redirigir al hacer click en "Ver Detalles"
         document.querySelectorAll('.ver-detalles').forEach(btn => {
             btn.addEventListener('click', function() {
-                window.location.href = 'fraccionamiento.html';
+                window.location.href = 'fraccionamiento_admin';
             });
         });
 
@@ -436,6 +496,26 @@
                 totalLotes.value = parseInt(numeroFinal.value) - parseInt(numeroInicial.value) + 1;
             }
         });
+
+        // Funcionalidad para los botones "Habilitar Fraccionamiento"
+document.querySelectorAll('.habilitar-fraccionamiento').forEach(btn => {
+    btn.addEventListener('click', function() {
+        if(confirm('¿Estás seguro de que deseas habilitar este fraccionamiento?')) {
+            // Aquí irá la lógica para habilitar el fraccionamiento
+            alert('Fraccionamiento habilitado correctamente');
+        }
+    });
+});
+
+// Funcionalidad para los botones "Eliminar Fraccionamiento"
+document.querySelectorAll('.eliminar-fraccionamiento').forEach(btn => {
+    btn.addEventListener('click', function() {
+        if(confirm('¿Estás seguro de que deseas eliminar este fraccionamiento? Esta acción no se puede deshacer.')) {
+            // Aquí irá la lógica para eliminar el fraccionamiento
+            alert('Fraccionamiento eliminado correctamente');
+        }
+    });
+});
     </script>
 </body>
 </html>

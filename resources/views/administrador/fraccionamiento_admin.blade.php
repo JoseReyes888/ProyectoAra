@@ -18,22 +18,68 @@
                 <span>Detalles del Fraccionamiento</span>
             </h1>
             <div class="page-actions">
-                <button class="btn btn-outline" onclick="window.location.href='ventas'">
+                <button class="btn btn-outline" onclick="window.location.href='inicio_admin'">
                     <i class="fas fa-arrow-left"></i> Volver
                 </button>
             </div>
         </div>
 
-        <!-- Development Header -->
+<!-- Development Header -->
         <div class="development-header">
-            <h2 class="development-name">OCEÁNICA</h2>
-            <div class="development-location">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Playa Guapinole, Santa María Tonameca, Oaxaca</span>
+            <div class="header-content">
+                <div class="header-main">
+                    <h2 class="development-name">OCEÁNICA</h2>
+                    <button class="btn btn-edit" id="btnModificar">
+                        <i class="fas fa-edit"></i>
+                        <span>Modificar</span>
+                    </button>
+                </div>
+                <div class="development-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Playa Guapinole, Santa María Tonameca, Oaxaca</span>
+                </div>
+                <p class="development-description">
+                    OCEÁNICA es un exclusivo fraccionamiento ubicado frente al mar, diseñado para quienes buscan un estilo de vida tranquilo y en contacto con la naturaleza. Con amplios lotes y diseño sustentable, ofrece la oportunidad perfecta para construir tu casa de ensueño en uno de los lugares más bellos de la costa oaxaqueña.
+                </p>
             </div>
-            <p class="development-description">
-                OCEÁNICA es un exclusivo fraccionamiento ubicado frente al mar, diseñado para quienes buscan un estilo de vida tranquilo y en contacto con la naturaleza. Con amplios lotes y diseño sustentable, ofrece la oportunidad perfecta para construir tu casa de ensueño en uno de los lugares más bellos de la costa oaxaqueña.
-            </p>
+        </div>
+
+                <!-- Modal para modificar datos -->
+        <div class="modal" id="modalModificar">
+            <div class="modal-content">
+                <button class="close-modal" id="closeModificarModal">&times;</button>
+                <h2 class="modal-title">Modificar Datos del Fraccionamiento</h2>
+                
+                <form id="modificarForm">
+                    <div class="form-group">
+                        <label for="logoFraccionamiento" class="form-label">Logo del Fraccionamiento</label>
+                        <div class="logo-preview-container">
+                            <img id="logoPreview" src="" alt="Logo actual" class="logo-preview">
+                            <input type="file" id="logoFraccionamiento" class="form-control" accept="image/*">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombreFraccionamientoMod" class="form-label">Nombre del Fraccionamiento</label>
+                        <input type="text" id="nombreFraccionamientoMod" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ubicacionFraccionamiento" class="form-label">Ubicación</label>
+                        <input type="text" id="ubicacionFraccionamiento" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcionFraccionamiento" class="form-label">Descripción</label>
+                        <textarea id="descripcionFraccionamiento" class="form-control" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="btnCancelarMod">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <!-- Development Plan -->
@@ -790,6 +836,71 @@
             lotDetails.style.display = 'block';
         });
 
+        // Funcionalidad para el modal de modificación
+        const modalModificar = document.getElementById('modalModificar');
+        const btnModificar = document.getElementById('btnModificar');
+        const closeModificarModal = document.getElementById('closeModificarModal');
+        const btnCancelarMod = document.getElementById('btnCancelarMod');
+        const modificarForm = document.getElementById('modificarForm');
+
+        // Abrir modal de modificación
+        btnModificar.addEventListener('click', function() {
+            // Cargar datos actuales
+            document.getElementById('nombreFraccionamientoMod').value = document.querySelector('.development-name').textContent.trim();
+            document.getElementById('ubicacionFraccionamiento').value = document.querySelector('.development-location span').textContent.trim();
+            document.getElementById('descripcionFraccionamiento').value = document.querySelector('.development-description').textContent.trim();
+            
+            modalModificar.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Cerrar modal
+        closeModificarModal.addEventListener('click', function() {
+            modalModificar.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        btnCancelarMod.addEventListener('click', function() {
+            modalModificar.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Cerrar al hacer clic fuera del modal
+        modalModificar.addEventListener('click', function(e) {
+            if (e.target === modalModificar) {
+                modalModificar.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Preview del logo
+        document.getElementById('logoFraccionamiento').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('logoPreview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Manejar envío del formulario
+        modificarForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Actualizar datos en la página
+            document.querySelector('.development-name').textContent = document.getElementById('nombreFraccionamientoMod').value;
+            document.querySelector('.development-location span').textContent = document.getElementById('ubicacionFraccionamiento').value;
+            document.querySelector('.development-description').textContent = document.getElementById('descripcionFraccionamiento').value;
+            
+            // Aquí irá la lógica para guardar los cambios en el servidor
+            alert('Cambios guardados correctamente');
+            
+            // Cerrar modal
+            modalModificar.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
 
 
     </script>
