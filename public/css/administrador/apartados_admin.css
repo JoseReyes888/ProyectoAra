@@ -476,3 +476,30 @@
         .btn-outline:hover {
             background-color: var(--accent-color);
         }
+        .page-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .page-actions .btn-success {
+            background-color: #10b981;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .page-actions .btn-success:hover {
+            background-color: #059669;
+            transform: translateY(-2px);
+        }
+
+        .page-actions .btn i {
+            font-size: 0.9rem;
+        }
