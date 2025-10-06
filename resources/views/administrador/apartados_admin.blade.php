@@ -160,7 +160,7 @@
                         </div>
                     </div>
                     
-                    <a href="detalles_apartados" class="details-link">
+                    <a href="detalles_apartados_admin" class="details-link">
                         Ver detalles <i class="fas fa-chevron-right"></i>
                     </a>
                 </div>
@@ -205,7 +205,7 @@
                         </div>
                     </div>
                     
-                    <a href="detalles_apartados" class="details-link">
+                    <a href="detalles_apartados_admin" class="details-link">
                         Ver detalles <i class="fas fa-chevron-right"></i>
                     </a>
                 </div>
@@ -249,8 +249,8 @@
                             <i class="fas fa-clock"></i> 2h restantes
                         </div>
                     </div>
-                    
-                    <a href="detalles_apartados" class="details-link">
+
+                    <a href="detalles_apartados_admin" class="details-link">
                         Ver detalles <i class="fas fa-chevron-right"></i>
                     </a>
                 </div>
@@ -294,8 +294,8 @@
                             <i class="fas fa-clock"></i> 45h restantes
                         </div>
                     </div>
-                    
-                    <a href="detalles_apartados" class="details-link">
+
+                    <a href="detalles_apartados_admin" class="details-link">
                         Ver detalles <i class="fas fa-chevron-right"></i>
                     </a>
                 </div>

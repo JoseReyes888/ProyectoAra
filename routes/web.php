@@ -36,3 +36,4 @@ Route::get('administrador/fraccionamiento_admin', [App\Http\Controllers\administ
 Route::get('administrador/detalles_apartados_admin', [App\Http\Controllers\administrador\DetallesApartadosController::class, 'index'])->name('detalles_apartados_admin');
 Route::get('administrador/ventas_admin', [App\Http\Controllers\administrador\VentasAdminController::class, 'index'])->name('ventas_admin');
 Route::get('administrador/detalles_venta_admin', [App\Http\Controllers\administrador\DetallesVentaAdminController::class, 'index'])->name('detalles_venta_admin');
+Route::get('administrador/solicitudes_apartados_admin', [App\Http\Controllers\administrador\SolicitudesApartadosAdminController::class, 'index'])->name('solicitudes_apartados_admin');
