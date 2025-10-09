@@ -1,6 +1,6 @@
 :root {
     --primary-color: #2563eb;
-    --success-color: #10b981;
+    --success-color: #10b981; /* Verde para "Vendida" */
     --danger-color: #ef4444; /* Usado para observaciones */
     --warning-color: #f59e0b;
     --gray-100: #f3f4f6;
@@ -142,7 +142,7 @@ body {
     color: white;
 }
 
-.badge-approved {
+.badge-vendida {
     background: var(--success-color);
     color: white;
 }

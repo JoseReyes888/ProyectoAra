@@ -23,7 +23,7 @@
                 <button class="btn btn-primary">
                     <i class="fas fa-filter"></i> Filtros
                 </button>
-                <button class="btn btn-success" onclick="window.location.href='solicitudes_pedidos_admin'">
+                <button class="btn btn-success" onclick="window.location.href='solicitudes_apartados_admin'">
                     <i class="fas fa-clipboard-list"></i> Solicitudes
                 </button>
             </div>

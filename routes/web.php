@@ -37,3 +37,5 @@ Route::get('administrador/detalles_apartados_admin', [App\Http\Controllers\admin
 Route::get('administrador/ventas_admin', [App\Http\Controllers\administrador\VentasAdminController::class, 'index'])->name('ventas_admin');
 Route::get('administrador/detalles_venta_admin', [App\Http\Controllers\administrador\DetallesVentaAdminController::class, 'index'])->name('detalles_venta_admin');
 Route::get('administrador/solicitudes_apartados_admin', [App\Http\Controllers\administrador\SolicitudesApartadosAdminController::class, 'index'])->name('solicitudes_apartados_admin');
+Route::get('administrador/solicitudes_ventas_admin', [App\Http\Controllers\administrador\SolicitudesVentasAdminController::class, 'index'])->name('solicitudes_ventas_admin');
+Route::get('administrador/gestion_usuarios_admin', [App\Http\Controllers\administrador\GestionUsuariosAdminController::class, 'index'])->name('gestion_usuarios_admin');

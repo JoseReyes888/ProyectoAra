@@ -122,10 +122,6 @@
                             <i class="fas fa-check"></i>
                             <span>Deshabilitar</span>
                         </button>
-                        <button class="btn btn-danger eliminar-fraccionamiento">
-                            <i class="fas fa-trash"></i>
-                            <span>Eliminar</span>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -171,10 +167,6 @@
                         <button class="btn btn-success deshabilitar-fraccionamiento">
                             <i class="fas fa-check"></i>
                             <span>Deshabilitar</span>
-                        </button>
-                        <button class="btn btn-danger eliminar-fraccionamiento">
-                            <i class="fas fa-trash"></i>
-                            <span>Eliminar</span>
                         </button>
                     </div>
                 </div>
@@ -224,10 +216,6 @@
                             <i class="fas fa-check"></i>
                             <span>Deshabilitar</span>
                         </button>
-                        <button class="btn btn-danger eliminar-fraccionamiento">
-                            <i class="fas fa-trash"></i>
-                            <span>Eliminar</span>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -273,10 +261,6 @@
                         <button class="btn btn-success deshabilitar-fraccionamiento">
                             <i class="fas fa-check"></i>
                             <span>Deshabilitar</span>
-                        </button>
-                        <button class="btn btn-danger eliminar-fraccionamiento">
-                            <i class="fas fa-trash"></i>
-                            <span>Eliminar</span>
                         </button>
                     </div>
                 </div>
@@ -503,16 +487,6 @@ document.querySelectorAll('.deshabilitar-fraccionamiento').forEach(btn => {
         if(confirm('¿Estás seguro de que deseas deshabilitar este fraccionamiento?')) {
             // Aquí irá la lógica para deshabilitar el fraccionamiento
             alert('Fraccionamiento deshabilitado correctamente');
-        }
-    });
-});
-
-// Funcionalidad para los botones "Eliminar Fraccionamiento"
-document.querySelectorAll('.eliminar-fraccionamiento').forEach(btn => {
-    btn.addEventListener('click', function() {
-        if(confirm('¿Estás seguro de que deseas eliminar este fraccionamiento? Esta acción no se puede deshacer.')) {
-            // Aquí irá la lógica para eliminar el fraccionamiento
-            alert('Fraccionamiento eliminado correctamente');
         }
     });
 });
